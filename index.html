@@ -1,307 +1,258 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burguer Chefes | Cartão Digital</title>
 
-  <title>Burguer Chefes | Cartão Digital</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-  <meta name="description" content="Burguer Chefes — hambúrguer artesanal em Cotia. Peça pelo WhatsApp e confira nosso cardápio.">
+body{
+  font-family:Arial,sans-serif;
+  background:#090909;
+  color:white;
+  padding:20px;
+  min-height:100vh;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+.card{
+  max-width:450px;
+  margin:auto;
+  background:#151515;
+  border:2px solid #e5b900;
+  border-radius:25px;
+  overflow:hidden;
+  box-shadow:0 0 35px #000;
+}
 
-    body {
-      min-height: 100vh;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+.hero{
+  text-align:center;
+  padding:25px 18px;
+  background:linear-gradient(145deg,#090909,#3a0905);
+}
 
-    .card {
-      width: 100%;
-      max-width: 430px;
-      background: #151515;
-      border: 1px solid #333;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,.7);
-    }
+.logo{
+  width:100%;
+  max-width:330px;
+  max-height:230px;
+  object-fit:contain;
+  border-radius:15px;
+  margin-bottom:15px;
+}
 
-    .top {
-      background: linear-gradient(135deg, #a40000, #e00000);
-      padding: 35px 20px 30px;
-      text-align: center;
-    }
+.handle{
+  color:#ffd000;
+  font-weight:bold;
+  font-size:16px;
+}
 
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 15px;
-      border-radius: 50%;
-      background: #111;
-      border: 4px solid #d6a62c;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 48px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.4);
-    }
+h1{
+  font-size:27px;
+  margin-top:10px;
+}
 
-    h1 {
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
+.subtitle{
+  color:#ddd;
+  margin-top:12px;
+  line-height:1.5;
+}
 
-    .instagram {
-      color: #ffd85c;
-      font-weight: bold;
-      font-size: 15px;
-    }
+.content{padding:22px 18px}
 
-    .content {
-      padding: 25px 20px 30px;
-    }
+.button{
+  display:block;
+  width:100%;
+  padding:18px;
+  margin:12px 0;
+  border-radius:40px;
+  text-align:center;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:15px;
+  border:2px solid transparent;
+  transition:.2s;
+}
 
-    .headline {
-      text-align: center;
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
+.button:active{transform:scale(.97)}
 
-    .description {
-      text-align: center;
-      color: #bbb;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
+.whatsapp{
+  background:#16b957;
+  color:white;
+}
 
-    .button {
-      display: block;
-      width: 100%;
-      padding: 17px 15px;
-      margin-bottom: 12px;
-      border-radius: 14px;
-      text-decoration: none;
-      text-align: center;
-      font-size: 16px;
-      font-weight: 800;
-      transition: .2s;
-    }
+.menu{
+  background:#e00000;
+  color:white;
+}
 
-    .button:active {
-      transform: scale(.97);
-    }
+.instagram{
+  background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);
+  color:white;
+}
 
-    .whatsapp {
-      background: #25D366;
-      color: #fff;
-    }
+.maps{
+  background:#242424;
+  border-color:#aaa;
+  color:white;
+}
 
-    .menu {
-      background: #d71920;
-      color: #fff;
-    }
+.share{
+  background:#ffd000;
+  color:#111;
+  cursor:pointer;
+}
 
-    .instagram-button {
-      background: #833AB4;
-      color: #fff;
-    }
+.info{
+  margin-top:22px;
+  padding:18px;
+  border:1px solid #e5b900;
+  border-radius:15px;
+  background:#0d0d0d;
+}
 
-    .maps {
-      background: #242424;
-      color: #fff;
-      border: 1px solid #444;
-    }
+.info h2{
+  color:#ffd000;
+  font-size:16px;
+  margin-bottom:10px;
+}
 
-    .share {
-      background: #d6a62c;
-      color: #111;
-    }
+.info p{
+  color:#ddd;
+  line-height:1.6;
+  font-size:14px;
+}
 
-    .info {
-      margin-top: 25px;
-      padding: 18px;
-      background: #101010;
-      border-radius: 16px;
-      border: 1px solid #2d2d2d;
-    }
+.status{
+  text-align:center;
+  margin-top:22px;
+  color:#aaa;
+  font-size:13px;
+}
 
-    .info-title {
-      color: #d6a62c;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
+.dot{
+  display:inline-block;
+  width:9px;
+  height:9px;
+  background:#22dd55;
+  border-radius:50%;
+  margin-right:6px;
+}
 
-    .address {
-      color: #ccc;
-      line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .status {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      margin-top: 22px;
-      color: #aaa;
-      font-size: 13px;
-    }
-
-    .dot {
-      width: 9px;
-      height: 9px;
-      background: #25D366;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #25D366;
-    }
-
-    footer {
-      text-align: center;
-      color: #666;
-      font-size: 11px;
-      padding-top: 18px;
-    }
-
-    @media (max-width: 380px) {
-      h1 {
-        font-size: 27px;
-      }
-
-      .headline {
-        font-size: 19px;
-      }
-
-      .button {
-        font-size: 15px;
-      }
-    }
-  </style>
+footer{
+  text-align:center;
+  color:#777;
+  font-size:11px;
+  padding:20px 0 5px;
+}
+</style>
 </head>
 
 <body>
 
-  <main class="card">
+<div class="card">
 
-    <section class="top">
+  <section class="hero">
 
-      <div class="logo">🍔</div>
+    <img
+      src="logo.jpeg"
+      alt="Logo Burguer Chefes"
+      class="logo">
 
-      <h1>Burguer Chefes</h1>
+    <h1>Burguer Chefes</h1>
 
-      <div class="instagram">@burguerchefes_</div>
+    <p class="handle">@burguerchefes_</p>
 
-    </section>
+    <p class="subtitle">
+      O sabor que merece respeito! 🔥<br>
+      Hambúrguer artesanal e muito mais.
+    </p>
 
-    <section class="content">
+  </section>
 
-      <div class="headline">
-        O sabor que merece respeito. 🔥
-      </div>
+  <section class="content">
 
-      <p class="description">
-        Hambúrguer artesanal, sabor de verdade e aquele lanche
-        que você vai querer repetir.
+    <a class="button whatsapp"
+      href="https://wa.me/5511939089345?text=Ol%C3%A1%20Burguer%20Chefes!%20Vim%20pelo%20cart%C3%A3o%20digital."
+      target="_blank">
+      📲 PEDIR PELO WHATSAPP
+    </a>
+
+    <a class="button menu"
+      href="https://wa.me/p/26088886507381806/5511939089345"
+      target="_blank">
+      🍔 VER CARDÁPIO
+    </a>
+
+    <a class="button instagram"
+      href="https://www.instagram.com/burguerchefes_/"
+      target="_blank">
+      📸 SEGUIR NO INSTAGRAM
+    </a>
+
+    <a class="button maps"
+      href="https://www.google.com/maps/search/?api=1&query=Estrada+Velha+da+Olaria+124+Jardim+Arco-Iris+Cotia+SP"
+      target="_blank">
+      📍 COMO CHEGAR
+    </a>
+
+    <button class="button share" onclick="compartilhar()">
+      🔗 COMPARTILHAR CARTÃO
+    </button>
+
+    <div class="info">
+      <h2>📍 NOSSO ENDEREÇO</h2>
+
+      <p>
+        Estr. Velha da Olaria, 124<br>
+        Jardim Arco-Iris<br>
+        Cotia - SP<br>
+        CEP 06719-150
       </p>
+    </div>
 
-      <a
-        class="button whatsapp"
-        href="https://wa.me/5511939089345?text=Ol%C3%A1%20Burguer%20Chefes!%20Vim%20pelo%20cart%C3%A3o%20digital."
-        target="_blank">
-        📲 PEDIR PELO WHATSAPP
-      </a>
+    <div class="status">
+      <span class="dot"></span>
+      Atendimento pelo WhatsApp
+    </div>
 
-      <a
-        class="button menu"
-        href="https://wa.me/p/26088886507381806/5511939089345"
-        target="_blank">
-        🍔 VER CARDÁPIO
-      </a>
+    <footer>
+      © Burguer Chefes — Todos os direitos reservados.
+    </footer>
 
-      <a
-        class="button instagram-button"
-        href="https://www.instagram.com/burguerchefes_/"
-        target="_blank">
-        📸 SEGUIR NO INSTAGRAM
-      </a>
+  </section>
 
-      <a
-        class="button maps"
-        href="https://www.google.com/maps/search/?api=1&query=Estrada+Velha+da+Olaria+124+Jardim+Arco-Iris+Cotia+SP+06719-150"
-        target="_blank">
-        📍 COMO CHEGAR
-      </a>
+</div>
 
-      <button class="button share" onclick="compartilhar()">
-        🔗 COMPARTILHAR CARTÃO
-      </button>
+<script>
+function compartilhar(){
 
-      <div class="info">
+  const dados = {
+    title: "Burguer Chefes",
+    text: "Confira o cartão digital do Burguer Chefes 🍔",
+    url: window.location.href
+  };
 
-        <div class="info-title">
-          📍 NOSSO ENDEREÇO
-        </div>
+  if(navigator.share){
 
-        <div class="address">
-          Estr. Velha da Olaria, 124<br>
-          Jardim Arco-Iris<br>
-          Cotia - SP<br>
-          CEP 06719-150
-        </div>
+    navigator.share(dados).catch(function(){});
 
-      </div>
+  }else if(navigator.clipboard){
 
-      <div class="status">
-        <span class="dot"></span>
-        Atendimento pelo WhatsApp
-      </div>
+    navigator.clipboard.writeText(window.location.href)
+      .then(function(){
+        alert("Link copiado!");
+      });
 
-      <footer>
-        © Burguer Chefes
-      </footer>
+  }else{
 
-    </section>
+    alert("Copie o endereço desta página para compartilhar.");
 
-  </main>
-
-  <script>
-    function compartilhar() {
-
-      const dados = {
-        title: "Burguer Chefes",
-        text: "Confira o cartão digital do Burguer Chefes 🍔🔥",
-        url: window.location.href
-      };
-
-      if (navigator.share) {
-
-        navigator.share(dados).catch(function() {});
-
-      } else {
-
-        navigator.clipboard.writeText(window.location.href)
-          .then(function() {
-            alert("Link do cartão copiado!");
-          })
-          .catch(function() {
-            alert("Copie o endereço desta página para compartilhar.");
-          });
-
-      }
-    }
-  </script>
+  }
+}
+</script>
 
 </body>
 </html>
+```
